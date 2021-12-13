@@ -6,8 +6,15 @@ import Row from './row';
 
 export class Medias extends Component {
   state = {
-    medias: getMedia(),
+    medias: [],
   };
+
+  componentDidMount() {
+    this.setState({
+      medias: getMedia(),
+    });
+  }
+
   render() {
     return (
       <Container>
