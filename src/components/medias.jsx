@@ -35,6 +35,21 @@ export class Medias extends Component {
     this.setState({ medias });
   };
 
+  handleSearch = (e) => {
+    let medias = getMedia();
+    let keyword = e.target.value.toLowerCase();
+
+    if (keyword !== '') {
+      medias = medias.filter((media) =>
+        media.author.toLowerCase().includes(keyword),
+      );
+    }
+
+    console.log(medias);
+
+    this.setState({ medias });
+  };
+
   render() {
     const { length: mediaCount } = this.state.medias;
     const { pageSize, currentPage, medias: allMedia } = this.state;
@@ -43,7 +58,7 @@ export class Medias extends Component {
 
     return (
       <React.Fragment>
-        <Filters onChange={this.handleSelect} />
+        <Filters onChange={this.handleSelect} onSearch={this.handleSearch} />
         <Container>
           <Row extraClasses='media-row'>
             {medias.map((media) => {
@@ -53,6 +68,8 @@ export class Medias extends Component {
                   overlayTitle={media.overlayTitle}
                   title={media.author}
                   key={media._id}
+                  type={media.type}
+                  video={media.vid}
                 />
               );
             })}

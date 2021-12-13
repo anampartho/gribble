@@ -12,7 +12,11 @@ export class Filters extends Component {
         <Container extraClasses='filters'>
           <Row>
             <Column>
-              <Input title='Search' placeholder='Search'></Input>
+              <Input
+                title='Search'
+                placeholder='Search'
+                onSearch={this.props.onSearch}
+              ></Input>
             </Column>
             <Column>
               <Select id='type' title='Type' onChange={this.props.onChange}>

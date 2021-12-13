@@ -32,6 +32,11 @@ export class Card extends Component {
             <div className='card-image-container'>
               <h5 className='card-title'>{this.props.overlayTitle}</h5>
               <img className='img-fluid' src={imageUrl} alt={this.props.alt} />
+              {this.props.type === 'video' && (
+                <div className='video'>
+                  <i className='fab fa-youtube'></i>
+                </div>
+              )}
             </div>
             <div className='card-body'>
               <h5 className='card-title'>{this.props.title}</h5>
@@ -41,7 +46,9 @@ export class Card extends Component {
         {this.state.lightboxOpen && (
           <Lightbox
             url={this.props.url}
+            video={this.props.video}
             onLightboxClick={this.handleLightbox}
+            type={this.props.type}
           />
         )}
       </React.Fragment>

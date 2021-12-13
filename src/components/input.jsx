@@ -16,6 +16,7 @@ export class Input extends Component {
           type={this.props.type}
           className={this.getInputClasses()}
           placeholder={this.props.placeholder}
+          onChange={this.props.onSearch}
         />
         {this.props.children}
       </React.Fragment>

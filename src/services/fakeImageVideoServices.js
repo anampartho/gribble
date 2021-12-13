@@ -269,6 +269,26 @@ const medias = [
     type: 'image',
     overlayTitle: 'This is a overlay title',
   },
+  {
+    _id: '1026',
+    author: 'Matthew Wiebe',
+    width: 4951,
+    height: 3301,
+    url: 'images/1025-4951x3301.jpg',
+    type: 'video',
+    overlayTitle: 'This is a overlay title',
+    vid: 'n4RjJKxsamQ',
+  },
+  {
+    _id: '1027',
+    author: 'Matthew Wiebe',
+    width: 4951,
+    height: 3301,
+    url: 'images/1025-4951x3301.jpg',
+    type: 'video',
+    overlayTitle: 'This is a overlay title',
+    vid: 'n4RjJKxsamQ',
+  },
 ];
 
 function getMedia() {
