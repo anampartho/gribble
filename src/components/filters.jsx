@@ -15,11 +15,10 @@ export class Filters extends Component {
               <Input title='Search' placeholder='Search'></Input>
             </Column>
             <Column>
-              <Select id='type' title='Type'>
-                <option defaultValue='1'>Open this select menu</option>
-                <option value='1'>One</option>
-                <option value='2'>Two</option>
-                <option value='3'>Three</option>
+              <Select id='type' title='Type' onChange={this.props.onChange}>
+                <option defaultValue=''>Choose a Media Type</option>
+                <option value='video'>Video</option>
+                <option value='image'>Image</option>
               </Select>
             </Column>
           </Row>

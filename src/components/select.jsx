@@ -9,6 +9,7 @@ export class Select extends Component {
           name={this.props.name}
           id={this.props.id}
           className='form-select'
+          onChange={this.props.onChange}
         >
           {this.props.children}
         </select>
