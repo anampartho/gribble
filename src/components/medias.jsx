@@ -3,10 +3,14 @@ import Card from './card';
 import getMedia from '../services/fakeImageVideoServices';
 import Container from './container';
 import Row from './row';
+import Pagination from './pagination';
+import { paginate } from '../utils/paginate';
 
 export class Medias extends Component {
   state = {
     medias: [],
+    pageSize: 9,
+    currentPage: 1,
   };
 
   componentDidMount() {
@@ -15,11 +19,20 @@ export class Medias extends Component {
     });
   }
 
+  handlePageChange = (page) => {
+    this.setState({ currentPage: page });
+  };
+
   render() {
+    const { length: mediaCount } = this.state.medias;
+    const { pageSize, currentPage, medias: allMedia } = this.state;
+
+    const medias = paginate(allMedia, currentPage, pageSize);
+
     return (
       <Container>
-        <Row>
-          {this.state.medias.map((media) => {
+        <Row extraClasses='media-row'>
+          {medias.map((media) => {
             return (
               <Card
                 url={media.url}
@@ -29,6 +42,12 @@ export class Medias extends Component {
               />
             );
           })}
+          <Pagination
+            itemsCount={mediaCount}
+            pageSize={pageSize}
+            onPageChange={this.handlePageChange}
+            currentPage={currentPage}
+          />
         </Row>
       </Container>
     );
