@@ -1,5 +1,17 @@
 # Gribble
 
+To run this project first clone the repository
+
+### `git clone https://github.com/anampartho/gribble.git gribble`
+
+Then install the dependencies
+
+### `npm install`
+
+After that run
+
+### `npm start`
+
 # This app was built using create-react-app, the following sections contain readme for the create-react-app
 
 # Getting Started with Create React App
