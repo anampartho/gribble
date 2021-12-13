@@ -1,0 +1,20 @@
+.pagination-container {
+  margin: 30px 0;
+}
+
+.pagination {
+  .page-item {
+    border-color: #0d0c22;
+    &.active {
+      border-color: #0d0c22;
+      a {
+        background-color: #0d0c22;
+        border-color: #0d0c22;
+      }
+    }
+    a {
+      cursor: pointer;
+      color: #0d0c22;
+    }
+  }
+}
